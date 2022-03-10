@@ -1,0 +1,96 @@
+<div class="content-area" style="background-color: white;">
+    <div class="row">
+        <div class="col-md-6 col-6 text-left">
+            <h2 class="inner-hd">View Permits</h2>
+        </div>
+        <div class="col-md-6 col-6 text-right">
+            <!-- <form>
+                <div class="form-row align-items-center">
+                    <div class="col-auto">
+                        <label>From</label>
+                        <input type="date" class="form-control inline-frm" placeholder="MM/DD/YYYY">
+                    </div>
+                    <div class="col-auto">
+                        <label>To</label>
+                        <input type="date" class="form-control inline-frm" placeholder="MM/DD/YYYY">
+                    </div>
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-default">Show</button>
+                    </div>
+                </div>
+            </form> -->
+        </div>
+    </div>
+    <hr class="brdr-btm">
+
+    <div class="row mb-3">
+        <div class="col">
+            <!-- <div class="row filercont">
+                <span class="col-md-12 fwt">FILTER BY</span>
+                <div class="col-md-3">
+                    <label class="col-md-12 col-form-label"><b>Permit Expired Past Hour(s) :</b></label>
+                    <div class="col-md-12">
+                        <select class="form-control" name="permit_exp" formControlName="permit_exp">
+                            <option [value]="1">1</option>
+                            <option [value]="2">2</option>
+                            <option [value]="3">3</option>
+                            <option [value]="4">4</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <label class="col-md-12 col-form-label"><b>Permit No:</b></label>
+                    <div class="col-md-12">
+                        <input type="text" name="permit_no" formControlName="permit_no"
+                            class="form-control form-control-solid" placeholder="Permit No" />
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <label class="col-md-12 col-form-label"><b>Plate-No:</b></label>
+                    <div class="col-md-12">
+                        <input type="text" name="plate_no" formControlName="plate_no"
+                            class="form-control form-control-solid" placeholder="Plate No" />
+                    </div>
+                </div>
+                <div class="col-md-3 showbtn">
+                    <button type="submit" class="btn btn-primary btn-elevate sho"> Show
+                    </button>
+                </div>
+            </div> -->
+            <!-- <div class="row lotdetails">
+                <div class="col-md-4"><span class="fwt">LOT NO :</span> 103200</div>
+                <div class="col-md-4"><span class="fwt">ADDRESS :</span> 2020 DON MILLS ROAD TORONTO</div>
+                <div class="col-md-4"><span class="fwt">PHONE NO :</span> 4164498507</div>
+            </div> -->
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Permit No</th>
+                            <th scope="col">Permit Type</th>
+                            <th scope="col">Payment Type</th>
+                            <th scope="col">Plate No</th>
+                            <th scope="col">Courtesy Card No</th>
+                            <th scope="col">Transaction Date</th>
+                            <th scope="col">Expriy Date & Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                       
+                            <tr *ngFor="let viewpermit of viewpermitService.items$ | async">
+                            <td>{{ viewpermit.permit_no }}</td>
+                            <td>{{ viewpermit.permit_type }}</td>
+                            <td>{{ viewpermit.payment_type }}</td>
+                            <td>{{ viewpermit.license }}</td>
+                            <td>{{ viewpermit.courtesy_number }}</td>
+                            <td>{{ viewpermit.transaction_date }}</td>
+                            <td>{{ viewpermit.expires_date }}</td>
+                        
+                        </tr>
+                       
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
